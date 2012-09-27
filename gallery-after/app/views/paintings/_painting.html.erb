@@ -1,0 +1,12 @@
+<div class="painting">
+  <% if painting.image_processed? %>
+    <%= link_to image_tag(painting.image_url(:thumb)), painting %>
+  <% else %>
+    <em>Processing...</em>
+  <% end %>
+  <div class="name"><%= painting.name %></div>
+  <div class="actions">
+    <%= link_to "edit", edit_painting_path(painting) %> |
+    <%= link_to "remove", painting, :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+</div>

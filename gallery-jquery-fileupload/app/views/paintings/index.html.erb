@@ -1,0 +1,17 @@
+<h1>Painting Gallery</h1>
+
+<div id="paintings">
+  <%= render @paintings %>
+</div>
+<div class="clear"></div>
+
+<%= s3_uploader_form post: paintings_url, as: "painting[image_url]" do %>
+  <%= file_field_tag :file, multiple: true %>
+<% end %>
+
+<script id="template-upload" type="text/x-tmpl">
+<div class="upload">
+  {%=o.name%}
+  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>

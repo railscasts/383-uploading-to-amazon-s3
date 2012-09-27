@@ -1,0 +1,11 @@
+<h1>Painting Gallery</h1>
+
+<div id="paintings">
+  <%= render @paintings %>
+</div>
+<div class="clear"></div>
+
+<%= direct_upload_form_for @uploader do |f| %>
+  <p><%= f.file_field :image %></p>
+  <p><%= f.submit "Upload Image" %></p>
+<% end %>
