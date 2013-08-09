@@ -16,7 +16,7 @@ module UploadHelper
         aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
         bucket: ENV["AWS_S3_BUCKET"],
         acl: "public-read",
-        expiration: 10.hours.from_now,
+        expiration: 10.hours.from_now.utc.iso8601,
         max_file_size: 500.megabytes,
         as: "file"
       )
